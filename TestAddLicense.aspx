@@ -1,4 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="TestAddLicense, App_Web_a5cixp2l" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="TestAddLicense, App_Web_nwjmfrih" %>
 
 <!DOCTYPE html>
 

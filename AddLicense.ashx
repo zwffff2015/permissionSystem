@@ -15,53 +15,45 @@ public class AddLicense : IHttpHandler
     {
         context.Response.ContentType = "text/plain";
 
-        try
+        Boolean enabled = false;
+        if (ConfigurationManager.AppSettings["enableCreateLicense"] != null)
         {
-            Boolean enabled = false;
-            if (ConfigurationManager.AppSettings["enableCreateLicense"] != null)
-            {
-                Boolean.TryParse(ConfigurationManager.AppSettings["enableCreateLicense"], out enabled);
-            }
-
-            if (!enabled)
-            {
-                WriteFailedResult(context, "disabled");
-                return;
-            }
-
-            var cpu = context.Request["cpu"] ?? "";
-            var harddisk = context.Request["harddisk"] ?? "";
-            var system = context.Request["system"] ?? "consume";
-            var desKey = Rand.GetRandStr(8);
-            var md5Key = Convert.ToBase64String(Encoding.UTF8.GetBytes(Rand.GetRandStr(16)));
-
-            var model = new ModelPermission
-            {
-                CPU = cpu,
-                HardDisk = harddisk,
-                RegisterDate = DateTime.Now,
-                Enabled = true,
-                SystemName = system,
-                ExpiredDate = new DateTime(2100, 12, 31),
-                DesKey = desKey,
-                Md5Key = md5Key
-            };
-            var id = _bllPermission.Add(model);
-
-            var response = new AddLicenseResponse(true)
-            {
-                Msg = "Successful",
-                DesKey = desKey,
-                Md5Key = md5Key,
-                PropertyId = id
-            };
-            WriteSuccessResult(context, response);
+            Boolean.TryParse(ConfigurationManager.AppSettings["enableCreateLicense"], out enabled);
         }
-        catch (Exception ex)
+
+        if (!enabled)
         {
-            LogHelper.WriteErrorLog(ex);
-            WriteFailedResult(context, "failed");
+            WriteFailedResult(context, "disabled");
+            return;
         }
+
+        var cpu = context.Request["cpu"] ?? "";
+        var harddisk = context.Request["harddisk"] ?? "";
+        var system = context.Request["system"] ?? "consume";
+        var desKey = Rand.GetRandStr(8);
+        var md5Key = Convert.ToBase64String(Encoding.UTF8.GetBytes(Rand.GetRandStr(16)));
+
+        var model = new ModelPermission
+        {
+            CPU = cpu,
+            HardDisk = harddisk,
+            RegisterDate = DateTime.Now,
+            Enabled = true,
+            SystemName = system,
+            ExpiredDate = new DateTime(2100, 12, 31),
+            DesKey = desKey,
+            Md5Key = md5Key
+        };
+        var id = _bllPermission.Add(model);
+
+        var response = new AddLicenseResponse(true)
+        {
+            Msg = "Successful",
+            DesKey = desKey,
+            Md5Key = md5Key,
+            PropertyId = id
+        };
+        WriteSuccessResult(context, response);
     }
 
     private static void WriteFailedResult(HttpContext context, String msg)
