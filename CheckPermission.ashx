@@ -1,8 +1,10 @@
 ﻿<%@ WebHandler Language="C#" Class="CheckPermission" %>
 
 using System;
+using System.Configuration;
 using System.Web;
 using System.Linq;
+using Darren.Common.Entities;
 using Darren.Common.Helper;
 using Darren.Common.Permission;
 using BllPermission = PermissionSystem.BLL.CsPermission;
@@ -14,6 +16,18 @@ public class CheckPermission : IHttpHandler
     public void ProcessRequest(HttpContext context)
     {
         context.Response.ContentType = "text/plain";
+
+        Boolean disabledAll = false;
+        if (ConfigurationManager.AppSettings["DisableAllLicenses"] != null)
+        {
+            Boolean.TryParse(ConfigurationManager.AppSettings["DisableAllLicenses"], out disabledAll);
+        }
+
+        if (disabledAll)
+        {
+            WriteFailedResult(context, "disabled");
+            return;
+        }
 
         var propertyId = context.Request["propertyId"] ?? "0";
         Int32 id;

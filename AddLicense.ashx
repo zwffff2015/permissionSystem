@@ -4,6 +4,7 @@ using System;
 using System.Configuration;
 using System.Text;
 using System.Web;
+using Darren.Common.Entities;
 using Darren.Common.Helper;
 using BllPermission = PermissionSystem.BLL.CsPermission;
 using ModelPermission = PermissionSystem.Model.CsPermission;
