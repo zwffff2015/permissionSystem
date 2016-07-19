@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PermissionSystem.DBUtility</name>
+    </assembly>
+    <members>
+        <member name="T:PermissionSystem.DBUtility.DbHelperSQL">
+            <summary>
+            数据访问抽象基础类
+            HRS 2008-08-11 作者：曾文锋
+            All rights reserved
+            </summary>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.OpenConn">
+            <summary>
+            显式打开一个数据库连接
+            </summary>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.CloseConn">
+            <summary>
+            显式关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.GetMaxID(System.String,System.String)">
+            <summary>
+            获取最大值
+            </summary>
+            <param name="FieldName">字段名</param>
+            <param name="TableName">表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.Exists(System.String)">
+            <summary>
+            查询结果集是否存在
+            </summary>
+            <param name="strSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.Exists(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            查询结果集是否存在
+            </summary>
+            <param name="strSql"></param>
+            <param name="cmdParms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteSql(System.String)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteSqlByTime(System.String,System.Int32)">
+            <summary>
+            执行SQL语句，设置命令的执行等待时间
+            </summary>
+            <param name="SQLString"></param>
+            <param name="Times"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteSqlTran(System.Collections.ArrayList)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteSql(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteSqlInsertImg(System.String,System.Byte[])">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteReader(System.String)">
+            <summary>
+            执行查询语句，返回SqlDataReader(使用该方法切记要手工关闭SqlDataReader和连接)
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.Query(System.String,System.Int32)">
+            <summary>
+            执行查询语句，返回DataSet,设置命令的执行等待时间
+            </summary>
+            <param name="SQLString"></param>
+            <param name="Times"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteSql(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteSqlTran(System.Collections.Hashtable)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.GetSingle(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回SqlDataReader (使用该方法切记要手工关闭SqlDataReader和连接) 使用方法：在使用结束后，显式调用CloseConn（）方法关闭连接
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.Query(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.PrepareCommand(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            准备参数
+            </summary>
+            <param name="cmd"></param>
+            <param name="conn"></param>
+            <param name="trans"></param>
+            <param name="cmdText"></param>
+            <param name="cmdParms"></param>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.RunProcedure(System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行存储过程  (使用该方法切记要手工关闭SqlDataReader和连接)  使用方法：在使用结束后，显式调用CloseConn（）方法关闭连接
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.RunProcedure(System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.RunProcedure(System.String,System.Data.IDataParameter[],System.String,System.Int32)">
+            <summary>
+            执行存储过程，返回DataSet记录集
+            </summary>
+            <param name="storedProcName"></param>
+            <param name="parameters"></param>
+            <param name="tableName"></param>
+            <param name="Times"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@)">
+            <summary>
+            执行存储过程，返回影响的行数		
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.DbHelperSQL.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值)	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="T:PermissionSystem.DBUtility.OracleHelper">
+            <summary>
+            A helper class used to execute queries against an Oracle database
+            时间：2008-08-11 作者：曾文锋
+            </summary>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute a database query which does not include a select
+            </summary>
+            <param name="connString">Connection string to database</param>
+            <param name="cmdType">Command type either stored procedure or SQL</param>
+            <param name="cmdText">Acutall SQL Command</param>
+            <param name="commandParameters">Parameters to bind to the command</param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.ExecuteNonQuery(System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand (that returns no resultset) against an existing database transaction 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="trans">an existing database transaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.ExecuteNonQuery(System.Data.OracleClient.OracleConnection,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand (that returns no resultset) against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand that returns the first column of the first record against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.ExecuteScalar(System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute	a OracleCommand (that returns a 1x1 resultset)	against	the	specified SqlTransaction
+            using the provided parameters.
+            </summary>
+            <param name="transaction">A	valid SqlTransaction</param>
+            <param name="commandType">The CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">The stored procedure name	or PL/SQL command</param>
+            <param name="commandParameters">An array of	OracleParamters used to execute the command</param>
+            <returns>An	object containing the value	in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.ExecuteScalar(System.Data.OracleClient.OracleConnection,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Execute an OracleCommand that returns the first column of the first record against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(conn, CommandType.StoredProcedure, "PublishOrders", new OracleParameter(":prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or PL/SQL command</param>
+            <param name="commandParameters">an array of OracleParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.CacheParameters(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Add a set of parameters to the cached
+            </summary>
+            <param name="cacheKey">Key value to look up the parameters</param>
+            <param name="commandParameters">Actual parameters to cached</param>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.GetCachedParameters(System.String)">
+            <summary>
+            Fetch parameters from the cache
+            </summary>
+            <param name="cacheKey">Key to look up the parameters</param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.PrepareCommand(System.Data.OracleClient.OracleCommand,System.Data.OracleClient.OracleConnection,System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            Internal function to prepare a command for execution by the database
+            </summary>
+            <param name="cmd">Existing command object</param>
+            <param name="conn">Database connection object</param>
+            <param name="trans">Optional transaction object</param>
+            <param name="cmdType">Command type, e.g. stored procedure</param>
+            <param name="cmdText">Command test</param>
+            <param name="commandParameters">Parameters for the command</param>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.OraBit(System.Boolean)">
+            <summary>
+            Converter to use boolean data type with Oracle
+            </summary>
+            <param name="value">Value to convert</param>
+            <returns></returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.OracleHelper.OraBool(System.String)">
+            <summary>
+            Converter to use boolean data type with Oracle
+            </summary>
+            <param name="value">Value to convert</param>
+            <returns></returns>
+        </member>
+        <member name="T:PermissionSystem.DBUtility.SqlHelper">
+            <summary>
+            The SqlHelper class is intended to encapsulate high performance, 
+            scalable best practices for common uses of SqlClient.
+            时间：2008-08-11 作者：曾文锋
+            </summary>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.ExecuteNonQuery(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand (that returns no resultset) using an existing SQL Transaction 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="trans">an existing sql transaction</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand that returns a resultset against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             SqlDataReader r = ExecuteReader(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>A SqlDataReader containing the results</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand that returns the first column of the first record against the database specified in the connection string 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">a valid connection string for a SqlConnection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a SqlCommand that returns the first column of the first record against an existing database connection 
+            using the provided parameters.
+            </summary>
+            <remarks>
+            e.g.:  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="conn">an existing database connection</param>
+            <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+            <param name="commandText">the stored procedure name or T-SQL command</param>
+            <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+            <returns>An object that should be converted to the expected type using Convert.To{Type}</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.CacheParameters(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            add parameter array to the cache
+            </summary>
+            <param name="cacheKey">Key to the parameter cache</param>
+            <param name="cmdParms">an array of SqlParamters to be cached</param>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.GetCachedParameters(System.String)">
+            <summary>
+            Retrieve cached parameters
+            </summary>
+            <param name="cacheKey">key used to lookup parameters</param>
+            <returns>Cached SqlParamters array</returns>
+        </member>
+        <member name="M:PermissionSystem.DBUtility.SqlHelper.PrepareCommand(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Prepare a command for execution
+            </summary>
+            <param name="cmd">SqlCommand object</param>
+            <param name="conn">SqlConnection object</param>
+            <param name="trans">SqlTransaction object</param>
+            <param name="cmdType">Cmd type e.g. stored procedure or text</param>
+            <param name="cmdText">Command text, e.g. Select * from Products</param>
+            <param name="cmdParms">SqlParameters to use in the command</param>
+        </member>
+    </members>
+</doc>

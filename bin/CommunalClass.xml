@@ -1,0 +1,1436 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CommunalClass</name>
+    </assembly>
+    <members>
+        <member name="T:CommunalClass.ByteArray">
+            <summary>
+            ByteArray 处理类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.ByteArray.Copy(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Copy bytearray to a new byte
+            </summary>
+            <param name="OrgByteArray"></param>
+            <param name="StartPosition"></param>
+            <param name="Length"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.Calculation">
+            <summary>
+            计算
+            </summary>
+        </member>
+        <member name="M:CommunalClass.Calculation.I32_I16(System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            32位数字转成2个16位数字
+            </summary>
+            <param name="orgValue"></param>
+            <param name="a"></param>
+            <param name="b"></param>
+        </member>
+        <member name="M:CommunalClass.Calculation.I16_I32(System.Int32,System.Int32)">
+            <summary>
+            将2个16位数字合并成一个32位数字
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.CollectionConvert">
+            <summary>
+            集合转换类
+            </summary>
+        </member>
+        <member name="T:ErrorHandle">
+            <summary>
+            错误处理类
+            </summary>
+        </member>
+        <member name="M:ErrorHandle.#ctor">
+            <summary>
+            错误处理类
+            </summary>
+        </member>
+        <member name="M:ErrorHandle.#ctor(System.String)">
+            <summary>
+            错误处理类
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ErrorHandle.#ctor(System.String,System.Exception)">
+            <summary>
+            错误处理类
+            </summary>
+            <param name="message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:ErrorHandle.GetBaseException">
+            <summary>
+            错误处理类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.FileProcess">
+            <summary>
+            文件处理类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.FileProcess.WriteFile(System.String,System.IO.Stream)">
+            <summary>
+            写文件（成功返回 True，否则返回 False）
+            </summary>
+            <param name="path">路径</param>
+            <param name="stream">要写入的流</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.FileProcess.ReadFile(System.String)">
+            <summary>
+            文件不存在将抛出异常
+            </summary>
+            <param name="path">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.FileProcess.getFileVersion(System.String)">
+            <summary>
+            获取目录下所有 exe 及 dll 文件版本号
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.FileProcess.getOneFileVersion(System.String)">
+            <summary>
+            获取单个 exe 及 dll 文件版本号
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.HttpProcess.ContentType">
+            <summary>
+            返回到浏览器的 Content-Type
+            </summary>
+        </member>
+        <member name="T:CommunalClass.IPConvert">
+            <summary>
+            IP地址转换类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.IPConvert.IP2Int(System.String)">
+            <summary>
+            将IP地址转成Int类型
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.IPConvert.IsCorrenctIP(System.String)">
+            <summary>
+            判断是否为IP格式
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.IPConvert.Int2IP(System.UInt32)">
+            <summary>
+            将Int转成IP格式
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.IPConvert.IP2long(System.String)">
+            <summary>
+            将IP转成Long类型
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.IPConvert.long2IP(System.Int64)">
+            <summary>
+            将Long转成IP格式
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.IPConvert.Domain2IP(System.String)">
+            <summary>
+            将域名转成IP
+            </summary>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.IPConvert.IPDetailsClass">
+            <summary>
+            IP内容类
+            </summary>
+        </member>
+        <member name="F:CommunalClass.IPConvert.IPDetailsClass.IPStart">
+            <summary>
+            开始IP
+            </summary>
+        </member>
+        <member name="F:CommunalClass.IPConvert.IPDetailsClass.IPEnd">
+            <summary>
+            结束IP
+            </summary>
+        </member>
+        <member name="F:CommunalClass.IPConvert.IPDetailsClass.location">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="T:CommunalClass.LanguageConvert">
+            <summary>
+            语言转换
+            </summary>
+        </member>
+        <member name="M:CommunalClass.LanguageConvert.StringToInt(System.String)">
+            <summary>
+            语言代码转换成Int格式
+            </summary>
+            <param name="lan_code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.LanguageConvert.IntToStringForSqlColumn(System.Int32)">
+            <summary>
+            INT转成数据库中存储的名字
+            </summary>
+            <param name="lan_code"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.LogsRecord">
+            <summary>
+            日志记录
+            </summary>
+        </member>
+        <member name="M:CommunalClass.LogsRecord.write(System.String,System.String,System.Boolean)">
+            <summary>
+            写日志
+            </summary>
+            <param name="logName">日志名</param>
+            <param name="content">内容</param>
+            <param name="FileNameByDay">是否每天产生一个目录</param>
+        </member>
+        <member name="M:CommunalClass.LogsRecord.write(System.String,System.String)">
+            <summary>
+            写日志
+            </summary>
+            <param name="logName">日志名</param>
+            <param name="content">内容</param>
+        </member>
+        <member name="M:CommunalClass.LogsRecord.write(System.String,System.String,System.String)">
+            <summary>
+            写日志
+            </summary>
+            <param name="logName">日志名</param>
+            <param name="content">内容</param>
+            <param name="LogsPath">指定特定日志目录</param>
+        </member>
+        <member name="M:CommunalClass.LogsRecord.closeLoseLogFile">
+            <summary>
+            关闭丢失日志记录文件流
+            </summary>
+        </member>
+        <member name="M:CommunalClass.LogsRecord.closeLogFile">
+            <summary>
+            关闭最后打开的日志文件流
+            </summary>
+        </member>
+        <member name="M:CommunalClass.LogsRecord.#ctor(System.String)">
+            <summary>
+            日志记录类
+            </summary>
+            <param name="logName">日志名</param>
+        </member>
+        <member name="M:CommunalClass.LogsRecord.write(System.String)">
+            <summary>
+            写日志(非静态)
+            </summary>
+            <param name="content">内容</param>
+        </member>
+        <member name="M:CommunalClass.LogsRecord.close">
+            <summary>
+            关闭当前日志流
+            </summary>
+        </member>
+        <member name="T:CommunalClass.MessageDisplay">
+            <summary>
+            消息显示类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.#ctor(System.Windows.Forms.TextBox)">
+            <summary>
+            消息显示类
+            </summary>
+            <param name="msgControl"></param>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay._clearFilter(System.Object,System.EventArgs)">
+            <summary>
+            清除消息过滤
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay._setFilter(System.Object,System.EventArgs)">
+            <summary>
+            设置消息过滤字符串
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay._stop(System.Object,System.EventArgs)">
+            <summary>
+            暂停显示
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay._display(System.Object,System.EventArgs)">
+            <summary>
+            显示消息
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.Clear(System.Object,System.EventArgs)">
+            <summary>
+            清除消息内容
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.Clear">
+            <summary>
+            清除消息内容
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.CopySelect(System.Object,System.EventArgs)">
+            <summary>
+            复制选择内容内容
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.CopyMSG(System.Object,System.EventArgs)">
+            <summary>
+            复制消息内容
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.msg(System.String)">
+            <summary>
+            显示消息内容
+            </summary>
+            <param name="mg">消息内容</param>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.msg(System.String,System.String)">
+            <summary>
+            显示消息
+            </summary>
+            <param name="type">消息类别</param>
+            <param name="mg">消息内容</param>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.disMSG(System.Boolean)">
+            <summary>
+            开始显示的处理
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageDisplay.disMSG(System.String)">
+            <summary>
+            将消息输出到控件上
+            </summary>
+            <param name="mg"></param>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.FilterString">
+            <summary>
+            获取或者设置消息过滤字符串
+            </summary>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.defaultType">
+            <summary>
+            默认消息标题
+            </summary>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.pause">
+            <summary>
+            是否暂停显示日志
+            </summary>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.minMsgInterval">
+            <summary>
+            2条消息之间的最小间隔（防止程序卡死)
+            </summary>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.maxLine">
+            <summary>
+            最大显示行数，默认为100
+            </summary>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.allowDisplaySameContent">
+            <summary>
+            是否可以显示多行相同内容的消息
+            </summary>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.lastMsg">
+            <summary>
+            记录最后一条消息
+            </summary>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.hvNotProcMsg">
+            <summary>
+            是否有没有显示的消息
+            </summary>
+        </member>
+        <member name="P:CommunalClass.MessageDisplay.isClosing">
+            <summary>
+            窗口是否正在关闭
+            </summary>
+        </member>
+        <member name="T:CommunalClass.MessageProc">
+            <summary>
+            消息处理类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.MessageProc.InitializeLifetimeService">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.MessageProc.msgType">
+            <summary>
+            消息类别,默认为当前类名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.MessageProc.msg(System.String)">
+            <summary>
+            显示消息
+            </summary>
+            <param name="mg">消息内容</param>
+        </member>
+        <member name="M:CommunalClass.MessageProc.msg(System.String,System.String)">
+            <summary>
+            显示消息
+            </summary>
+            <param name="type">消息类别</param>
+            <param name="mg">消息内容</param>
+        </member>
+        <member name="E:CommunalClass.MessageProc.noticeEvent">
+            <summary>
+            消息事件
+            </summary>
+        </member>
+        <member name="T:CommunalClass.MessageProc.myNoticeEvent">
+            <summary>
+            消息事件委托
+            </summary>
+            <param name="type"></param>
+            <param name="mg"></param>
+        </member>
+        <member name="T:CommunalClass.DebugType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:CommunalClass.DebugType.Both">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:CommunalClass.DebugType.LogOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:CommunalClass.DebugType.MsgOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:CommunalClass.DebugType.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:CommunalClass.network">
+            <summary>
+            This is a class for disconnecting TCP connections.
+            You can get a list of all connections and close by a connection, localIP, remoteIP, localPort and remotePort.
+            </summary>
+        </member>
+        <member name="M:CommunalClass.network.CloseRemoteIP(System.String)">
+            <summary>
+            Close all connection to the remote IP
+            </summary>
+            <param name="IP"></param>
+        </member>
+        <member name="M:CommunalClass.network.CloseLocalIP(System.String)">
+            <summary>
+            Close all connections at current local IP
+            </summary>
+            <param name="IP"></param>
+        </member>
+        <member name="M:CommunalClass.network.CloseRemotePort(System.Int32)">
+            <summary>
+            Closes all connections to the remote port
+            </summary>
+            <param name="port"></param>
+        </member>
+        <member name="M:CommunalClass.network.CloseLocalPort(System.Int32)">
+            <summary>
+            Closes all connections to the local port
+            </summary>
+            <param name="port"></param>
+        </member>
+        <member name="M:CommunalClass.network.CloseConnection(System.String)">
+            <summary>
+            Close a connection by returning the connectionstring 
+            </summary>
+            <param name="connectionstring"></param>
+        </member>
+        <member name="M:CommunalClass.network.Connections">
+            <summary>
+            Gets all connections
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.network.Connections(CommunalClass.network.State)">
+            <summary>
+            Gets a connection list of connections with a defined state
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.network.FindOpenPort(System.Int32)">
+            <summary>
+            Find list of open ports
+            </summary>
+            <param name="checkPort">The port that need to check</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.network.getTcpTable">
+            <summary>
+            The function that fills the MIB_TCPROW array with connectioninfos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.network.IPStringToInt(System.String)">
+            <summary>
+            Convert an IP string to the INT value
+            </summary>
+            <param name="IP"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.network.IPIntToString(System.Int32)">
+            <summary>
+            Convert an IP integer to IP string
+            </summary>
+            <param name="IP"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.network.State">
+            <summary>
+            Enumeration of the states
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.All">
+            <summary>
+            All
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Closed">
+            <summary>
+            Closed
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Listen">
+            <summary>
+            Listen
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Syn_Sent">
+            <summary>
+            Syn_Sent
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Syn_Rcvd">
+            <summary>
+            Syn_Rcvd
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Established">
+            <summary>
+            Established
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Fin_Wait1">
+            <summary>
+            Fin_Wait1
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Fin_Wait2">
+            <summary>
+            Fin_Wait2
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Close_Wait">
+            <summary>
+            Close_Wait
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Closing">
+            <summary>
+            Closing
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Last_Ack">
+            <summary>
+            Last_Ack
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Time_Wait">
+            <summary>
+            Time_Wait
+            </summary>
+        </member>
+        <member name="F:CommunalClass.network.State.Delete_TCB">
+            <summary>
+            Delete_TCB
+            </summary>
+        </member>
+        <member name="T:CommunalClass.network.MIB_TCPROW">
+            <summary>
+            Connection info
+            </summary>
+        </member>
+        <member name="T:CommunalClass.ObjectSaveClass">
+            <summary>
+            Object保存及读取类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.ObjectSaveClass.save(System.Object,System.String)">
+            <summary>
+            保证对象到文件
+            </summary>
+            <param name="obj">需要保存的对象</param>
+            <param name="saveName">文件名</param>
+        </member>
+        <member name="M:CommunalClass.ObjectSaveClass.save(System.Object,System.String,System.Boolean)">
+            <summary>
+            保证对象到文件
+            </summary>
+            <param name="obj">需要保存的对象</param>
+            <param name="saveName">文件名</param>
+            <param name="compress">是否压缩(默认为 false)</param>
+        </member>
+        <member name="M:CommunalClass.ObjectSaveClass.getSaved(System.String)">
+            <summary>
+            读取文件对象
+            </summary>
+            <param name="saveName">存储名字</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.ObjectSaveClass.getSaved(System.String,System.Boolean)">
+            <summary>
+            读取文件对象
+            </summary>
+            <param name="saveName">存储名字</param>
+            <param name="compress">是否为压缩格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.ObjectSaveClass.getSavedByPath(System.String)">
+            <summary>
+            按指定路径读取存储的对象
+            </summary>
+            <param name="path">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.ObjectSaveClass.getSavedByPath(System.String,System.Boolean)">
+            <summary>
+            按指定路径读取存储的对象
+            </summary>
+            <param name="path">路径</param>
+            <param name="compress">是否为压缩格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.ObjectSaveClass.getObjectFromStream(System.IO.Stream)">
+            <summary>
+            将流转成对象
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="P:CommunalClass.PingClass.TimeOut">
+            <summary>
+            超时时间（毫秒，默认12000）
+            </summary>
+        </member>
+        <member name="P:CommunalClass.PingClass.TTL">
+            <summary>
+            请求TTL值(默认64)
+            </summary>
+        </member>
+        <member name="P:CommunalClass.PingClass.DontFragment">
+            <summary>
+            DontFragment (默认为 True)
+            </summary>
+        </member>
+        <member name="T:CommunalClass.Probability">
+            <summary>
+            数学运算类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.Probability.gam(System.Int32)">
+            <summary>
+            计算  n/2 的Γ函数值: Γ(n/2)
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.Probability.norm(System.Double)">
+            <summary>
+             正态分布函数值:  p(-∞,u)
+            </summary>
+            <param name="u"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.Probability.re_norm(System.Double)">
+            <summary>
+            正态分布的反函数, p(-∞,u)=p ; 已知p, 返回u
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.Probability.chi2(System.Int32,System.Double,System.Double@)">
+            <summary>
+            chi2分布函数值及密度值:
+            </summary>
+            <param name="n"></param>
+            <param name="x"></param>
+            <param name="f">密度值</param>
+            <returns>区间(0,x)上的概率p</returns>
+        </member>
+        <member name="M:CommunalClass.Probability.re_chi2(System.Int32,System.Double)">
+            <summary>
+            chi方分布的反函数:  p=F(0,x)
+            </summary>
+            <param name="n">自由度n</param>
+            <param name="p">已知概率值p</param>
+            <returns>反求x</returns>
+        </member>
+        <member name="M:CommunalClass.Probability.F(System.Int32,System.Int32,System.Double,System.Double@)">
+            <summary>
+            计算F分布函数值: 区间(0,x)上的概率p
+            </summary>
+            <param name="n1"></param>
+            <param name="n2"></param>
+            <param name="x"></param>
+            <param name="f">x处的概率密度值</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.Probability.re_F(System.Int32,System.Int32,System.Double)">
+            <summary>
+            F分布的反函数：p=F(0,x), 已知p,反求x
+            </summary>
+            <param name="n1"></param>
+            <param name="n2"></param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.Probability.B(System.Int32,System.Int32,System.Double,System.Double@)">
+            <summary>
+            B分布函数值: 区间(0,x)上的概率p  已知x,n1,n2, 求q,Ux
+            </summary>
+            <param name="n1"></param>
+            <param name="n2"></param>
+            <param name="x"></param>
+            <param name="Ux">x处的概率密度值</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.Probability.t(System.Int32,System.Double,System.Double@)">
+            <summary>
+            t分布的分布函数值（负无穷到t的积分值）
+            </summary>
+            <param name="nn">自由度</param>
+            <param name="t"></param>
+            <param name="f"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.Probability.re_t(System.Int32,System.Double)">
+            <summary>
+            t分布的反函数：p=F(x),已知p，反求x
+            </summary>
+            <param name="n"></param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.StreamConvert">
+            <summary>
+            流转换
+            </summary>
+        </member>
+        <member name="M:CommunalClass.StreamConvert.StreamToByteArray(System.IO.Stream,System.Boolean,System.Boolean)">
+            <summary>
+            Convert stream to byte[]
+            </summary>
+            <param name="s">Stream</param>
+            <param name="isCompress">If compress</param>
+            <param name="DisposeIt">If dispose it when complete</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.StreamConvert.StreamToString(System.IO.Stream,System.Boolean,System.Boolean)">
+            <summary>
+            Convert stream to string
+            </summary>
+            <param name="s">Stream</param>
+            <param name="isCompress">If compress</param>
+            <param name="DisposeIt">If dispose it when complete</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.StreamConvert.StringToStream(System.String,System.Boolean)">
+            <summary>
+            Convert string to stream
+            </summary>
+            <param name="s">Stream</param>
+            <param name="compress">If compress it</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.StreamConvert.ObjectToStream(System.Object,System.Boolean)">
+            <summary>
+            Convert object to stream
+            </summary>
+            <param name="dt">object</param>
+            <param name="compress">Compress</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.StreamConvert.ObjectToStream(System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            系列化对象
+            </summary>
+            <param name="obj">要系列化的对象</param>
+            <param name="compress">是否压缩</param>
+            <param name="UnSafe">是否使得非安全模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.StreamConvert.StreamToObject(System.IO.Stream,System.Boolean,System.Boolean)">
+            <summary>
+            将流转成对象
+            </summary>
+            <param name="s">待转换的流</param>
+            <param name="isCompress">是否压缩</param>
+            <param name="DisposeIt">转换完后是否释放流</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.StreamConvert.StreamToObject(System.IO.Stream,System.Boolean)">
+            <summary>
+            将流还原成 Object
+            </summary>
+            <param name="s"></param>
+            <param name="isCompress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.StreamConvert.StreamToBytes(System.IO.Stream)">
+            <summary> 
+            将 Stream 转成 byte[] 
+            </summary> 
+        </member>
+        <member name="T:CommunalClass.stringCoding">
+            <summary>
+            与字符串有关的处理类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.stringCoding.GetMD5(System.String)">
+            <summary>
+            MD5 Encryption
+            </summary>
+            <param name="orgString">The string of need to encrypt</param>
+            <returns>Encrypted string</returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.toDateTime(System.Object)">
+            <summary>
+            转换成标准日期格式，默认格式：M/d/yyyy HH:mm:ss
+            </summary>
+            <param name="dateString">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.toDateTimeNN(System.Object)">
+            <summary>
+            转换成标准日期格式，默认格式：M/d/yyyy HH:mm:ss
+            </summary>
+            <param name="dateString">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.toDateTime(System.Object,System.String)">
+            <summary>
+            转换成标准日期格式
+            </summary>
+            <param name="dateString">字符串</param>
+            <param name="dateFormat">格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.toDateTimeNN(System.Object,System.String)">
+            <summary>
+            转换成标准日期格式
+            </summary>
+            <param name="dateString">字符串</param>
+            <param name="dateFormat">格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.getReturnByte(System.String)">
+            <summary>
+            得到向浏览器输出的数据
+            </summary>
+            <param name="content">内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.madeResponseData(System.String,System.String)">
+            <summary>
+            按输出格式得到向浏览器输出的数据
+            </summary>
+            <param name="content">内容</param>
+            <param name="contentType">格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.madeResponseData(System.Byte[],CommunalClass.stringCoding.DataFormat,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            按输出格式得到向浏览器输出的数据
+            </summary>
+            <param name="content">内容</param>
+            <param name="type">类型</param>
+            <param name="Compress">是否压缩</param>
+            <param name="KeepAlive"></param>
+            <param name="Cookies"></param>
+            <param name="IF_NONE_MATCH"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.madeResponseData_forRedirect(System.String)">
+            <summary>
+            得到向浏览器输出的数据（重定向专用）
+            </summary>
+            <param name="url">要生定向的URL</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.JsonFormat(System.String)">
+            <summary>
+            将字符串格式化成符合Json标准的的字符串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.RndNum(System.Int32)">
+            <summary>
+            该方法用于生成指定位数的随机数
+            </summary>
+            <param name="VcodeNum">参数是随机数的位数</param>
+            <returns>返回一个随机数字符串</returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.getNowDateTime">
+            <summary>
+            Get the total seconds from 2010-3-1 to now;
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.EncryString(System.String,System.String)">
+            <summary>
+            加密字符串（默认为UTF8编码格式）
+            </summary>
+            <param name="OrgString">待加密的字符串</param>
+            <param name="Key">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.EncryString(System.String,System.String,System.String)">
+            <summary>
+            加密字符串
+            </summary>
+            <param name="OrgString">待加密的字符串</param>
+            <param name="Key">密钥</param>
+            <param name="StringCoding">编码格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.DecryString(System.String,System.String)">
+            <summary>
+            解密字符串（默认为UTF8编码格式）
+            </summary>
+            <param name="OrgString">待解密的字符串</param>
+            <param name="Key">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.stringCoding.DecryString(System.String,System.String,System.String)">
+            <summary>
+            解密字符串
+            </summary>
+            <param name="OrgString">待解密的字符串</param>
+            <param name="Key">密钥</param>
+            <param name="StringCoding">编码格式</param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.stringCoding.DataFormat">
+            <summary>
+            HTTP 内容格式
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.flash">
+            <summary>
+            application/x-shockwave-flash
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.html">
+            <summary>
+            text/html
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.jpg">
+            <summary>
+            image/jpeg
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.jpeg">
+            <summary>
+            image/jpeg
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.gif">
+            <summary>
+            image/gif
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.png">
+            <summary>
+            image/png
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.x_javascript">
+            <summary>
+            application/x-javascript
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.javascript">
+            <summary>
+            text/javascript
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.css">
+            <summary>
+            text/css
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.xml">
+            <summary>
+            application/xml
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.json">
+            <summary>
+            application/json
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.bmp">
+            <summary>
+            image/bmp
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.ajax">
+            <summary>
+            application/ajax
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.flex">
+            <summary>
+            application/flex
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.silverlight">
+            <summary>
+            application/silverlight
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.mp3">
+            <summary>
+            audio/mpeg
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.mpeg">
+            <summary>
+            audio/mpeg
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.mid">
+            <summary>
+            audio/midi
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.wav">
+            <summary>
+            audio/x-wav
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.mov">
+            <summary>
+            video/quicktime
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.exe">
+            <summary>
+            application/octet-stream
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.gz">
+            <summary>
+            application/x-gzip
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.pdb">
+            <summary>
+            chemical/x-pdb
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.pdf">
+            <summary>
+            application/pdf
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.ppt">
+            <summary>
+            application/mspowerpoint
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.ra">
+            <summary>
+            audio/x-realaudio
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.ram">
+            <summary>
+            audio/x-pn-realaudio
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.rm">
+            <summary>
+            audio/x-pn-realaudio
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.rtf">
+            <summary>
+            text/rtf
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.rtx">
+            <summary>
+            text/richtext
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.src">
+            <summary>
+            application/x-wais-source
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.tif">
+            <summary>
+            image/tiff
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.tiff">
+            <summary>
+            image/tiff
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.txt">
+            <summary>
+            text/plain
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.xls">
+            <summary>
+            application/vnd.ms-excel
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.DataFormat.zip">
+            <summary>
+            application/zip
+            </summary>
+        </member>
+        <member name="T:CommunalClass.stringCoding.ContentType">
+            <summary>
+            输出数据类型
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.ContentType.text_html">
+            <summary>
+            text/html
+            </summary>
+        </member>
+        <member name="F:CommunalClass.stringCoding.ContentType.json">
+            <summary>
+            application/json
+            </summary>
+        </member>
+        <member name="T:CommunalClass.thread">
+            <summary>
+            线程相关处理
+            </summary>
+        </member>
+        <member name="M:CommunalClass.thread.Delay(System.Int32)">
+            <summary>
+            实现无阻塞延时
+            </summary>
+            <param name="minisecond">毫秒</param>
+        </member>
+        <member name="M:CommunalClass.thread.isRunning(System.Boolean)">
+            <summary>
+            判断是否存在当前程序进程
+            </summary>
+            <param name="killExistProcess">如果存在是否强制终止</param>
+            <returns></returns>
+        </member>
+        <member name="T:CommunalClass.txtFileProcess">
+            <summary>
+            文本文件处理类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.txtFileProcess.writeLog(System.String,System.String,System.Boolean)">
+            <summary>
+            Write log file
+            </summary>
+            <param name="FilePath"></param>
+            <param name="content"></param>
+            <param name="autoByDate"></param>
+        </member>
+        <member name="M:CommunalClass.txtFileProcess.writeTextFile(System.String,System.String,System.Boolean)">
+            <summary>
+            Write Text file
+            </summary>
+            <param name="FilePath">Patch</param>
+            <param name="content">Content</param>
+            <param name="append">是否为追加</param>
+        </member>
+        <member name="M:CommunalClass.txtFileProcess.writeTextFile(System.String,System.String,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Write Text file
+            </summary>
+            <param name="FilePath">Patch</param>
+            <param name="content">Content</param>
+            <param name="append">If append</param>
+            <param name="encode">Code</param>
+        </member>
+        <member name="T:CommunalClass.WebNetClass.myStruct">
+            <summary>
+            结构
+            </summary>
+        </member>
+        <member name="T:CommunalClass.WebNetClass.myStruct.userinfo">
+            <summary>
+            用户数据
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.logTime">
+            <summary>
+            登录时间
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.session">
+            <summary>
+            Session
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.sock">
+            <summary>
+            Socket
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.limit">
+            <summary>
+            用户权限,0：无效；1：不可看注单用户名；4：可看注单用户名
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.userid">
+            <summary>
+            UserID
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.listId">
+            <summary>
+            用户选择的 Match 列表，格式：id$id$
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.listUpdate">
+            <summary>
+            用户的更新时间列表，格式：time|time
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.userinfo.isOpen1X2">
+            <summary>
+            是否有开1X2
+            </summary>
+        </member>
+        <member name="T:CommunalClass.WebNetClass.myStruct.sendData">
+            <summary>
+            传输数据
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.sendData.type">
+            <summary>
+            类别
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.sendData.content">
+            <summary>
+            数据内容
+            </summary>
+        </member>
+        <member name="T:CommunalClass.WebNetClass.myStruct.sendWebData">
+            <summary>
+            与WEB交互数据类
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.sendWebData.fullData">
+            <summary>
+            全量数据
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.sendWebData.upTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:CommunalClass.WebNetClass.myStruct.sendAccRejData">
+            <summary>
+            ACC/REJ交互数据
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.sendAccRejData.ListId">
+            <summary>
+            ListID
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.sendAccRejData.fullData">
+            <summary>
+            Fulldata
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.sendAccRejData.isFull">
+            <summary>
+            是否为 Fulldata
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.sendAccRejData.delIdList">
+            <summary>
+            删除清单
+            </summary>
+        </member>
+        <member name="T:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate">
+            <summary>
+            Stakeplace增量更新
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.flag">
+            <summary>
+            标识服务端是否是第一次取数据，如果是第一次则将查询出来的全部内容赋给客户端的fulldata
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.FullDT">
+            <summary>
+            Fulldata
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.UpdateDic">
+            <summary>
+            存储需要更新的信息
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.DeleteDic">
+            <summary>
+            删除列表
+            </summary>
+        </member>
+        <member name="F:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.AddDic">
+            <summary>
+            增加数据
+            </summary>
+        </member>
+        <member name="T:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.ModifyContent">
+            <summary>
+            修改内容
+            </summary>
+        </member>
+        <member name="P:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.ModifyContent.DangerStatus">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.ModifyContent.Operator1">
+            <summary>
+            Operator1
+            </summary>
+        </member>
+        <member name="P:CommunalClass.WebNetClass.myStruct.StakeplaceIncrementalUpdate.ModifyContent.Operator2">
+            <summary>
+            Operator2
+            </summary>
+        </member>
+        <member name="T:CommunalClass.WebNetClass.StateObject">
+            <summary>
+            状态对象
+            </summary>
+        </member>
+        <member name="M:CommunalClass.WebNetClass.StateObject.#ctor(System.Int32,System.Net.Sockets.Socket)">
+            
+            <summary>   
+            构造   
+            </summary>   
+            <param name="bufferSize">缓存</param>   
+            <param name="WorkSocket">工作的插座</param>   
+        </member>
+        <member name="F:CommunalClass.WebNetClass.StateObject.buffer">
+            
+            <summary>   
+            缓存   
+            </summary>   
+        </member>
+        <member name="F:CommunalClass.WebNetClass.StateObject.workSocket">
+            
+            <summary>   
+            工作插座   
+            </summary>   
+        </member>
+        <member name="F:CommunalClass.WebNetClass.StateObject.Datastream">
+            
+            <summary>   
+            数据流   
+            </summary>   
+        </member>
+        <member name="F:CommunalClass.WebNetClass.StateObject.residualSize">
+            
+            <summary>   
+            剩余大小   
+            </summary>   
+        </member>
+        <member name="F:CommunalClass.WebNetClass.StateObject.packSize">
+            
+            <summary>   
+            数据包大小   
+            </summary>   
+        </member>
+        <member name="F:CommunalClass.WebNetClass.StateObject.Cortrol">
+            
+            <summary>   
+            计数器   
+            </summary>   
+        </member>
+        <member name="T:CommunalClass.zipClass">
+            <summary>
+            数据压缩处理类
+            </summary>
+        </member>
+        <member name="M:CommunalClass.zipClass.Decompress(System.IO.Stream)">
+            <summary>
+            解压缩
+            </summary>
+            <param name="sourceStream">待解压缩的流</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommunalClass.zipClass.Compress(System.IO.Stream)">
+            <summary>
+            压缩流
+            </summary>
+            <param name="sourceStream">待压缩的流</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
